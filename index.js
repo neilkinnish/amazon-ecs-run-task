@@ -123,6 +123,7 @@ async function run() {
       taskDefinition: taskDefArn,
       count: count,
       startedBy: startedBy,
+      launchType: "FARGATE",
       networkConfiguration: network ? JSON.parse(network) : undefined,
     })}`)
 
@@ -131,6 +132,7 @@ async function run() {
       taskDefinition: taskDefArn,
       count: count,
       startedBy: startedBy,
+      launchType: "FARGATE",
       networkConfiguration: network ? JSON.parse(network) : undefined,
     }).promise();
 
