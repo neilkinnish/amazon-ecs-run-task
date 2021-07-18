@@ -123,7 +123,7 @@ async function run() {
       taskDefinition: taskDefArn,
       count: count,
       startedBy: startedBy,
-      networkConfiguration: network,
+      networkConfiguration: network ? JSON.parse(network) : undefined,
     })}`)
 
     const runTaskResponse = await ecs.runTask({
@@ -131,7 +131,7 @@ async function run() {
       taskDefinition: taskDefArn,
       count: count,
       startedBy: startedBy,
-      networkConfiguration: network
+      networkConfiguration: network ? JSON.parse(network) : undefined,
     }).promise();
 
     core.debug(`Run task response ${JSON.stringify(runTaskResponse)}`)
