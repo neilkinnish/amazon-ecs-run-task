@@ -13,6 +13,9 @@ inputs:
   count:
     description: "The count of tasks to run. Will default to the 1"
     required: true
+  network:
+    description: "Network config"
+    required: false
   started-by:
     description: "The value of the task started-by"
     required: false
